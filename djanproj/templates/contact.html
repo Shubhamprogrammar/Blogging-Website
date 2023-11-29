@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us{% endblock title %}
+
+{% block body %}
+<div class="container px-0 ">
+  <img src="https://source.unsplash.com/1200x400/?phone,contact" class="d-block w-100 mx=0" alt="...">
+</div> 
+<div class="alert alert-success" role="alert">
+    <h5 class="mb-0">Contact Information</h5>
+  </div>
+  <div style="margin: 50px;">
+      <pre><p>Name:       Shubham Maurya <br>Mobile No.: <b>8850093749</b><br>Email ID:   <i>mauryashubham12349@gmail.com</i></p></pre>
+      <p style="margin:30px;">For any query contact on the above references.</p>
+</div>
+<div class="study" style="margin: 50px;">
+  <h3>Complaint Form</h3>
+  <form method="post" action="/contact">
+    {% csrf_token %}
+    <div class="input-group mb-3">
+      <span class="input-group-text" id="basic-addon1">Name</span>
+      <input type="text" class="form-control" placeholder="Enter Name" aria-label="Username" aria-describedby="basic-addon1" id="name" name="name">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="Email1" name="Email1" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Feedback</label>
+      <textarea class="form-control" name="feed" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock body %}
